@@ -1,0 +1,23 @@
+sudo /sbin/sysctl -w net.ipv4.ip_forward=1
+// always works the same, ip forwarding
+
+//set up connection to previous VXLAN 
+sudo ip link add vxlan0 type vxlan id {PreviousConnectionID} local {LocalIP} remote {PreviousRemoteIP} dev ens4 dstport {VxLanPort}
+sudo ip addr add {PreviousIPVXLAN} dev vxlan0
+sudo ip link set up dev vxlan0
+// Sets up receiver for Vxlan input
+
+//Sets up connection to next VXLAN
+sudo ip link add vxlan1 type vxlan id {NextConnectionID} local {LocalIP} remote {NextRemoteIP} dev ens4 dstport {VxlanPort}
+sudo ip addr add {NextIPVxlan} dev vxlan1
+sudo ip link set up dev vxlan1
+
+// May need to be able to loop this through every connection needed.
+
+// Routing between all VPCs in a loop?
+sudo ip route add {ConnectionSubnet[i]} via {NextVxlanIP[i]} dev 
+
+// unrelated to routing
+sudo apt update
+sudo apt install -y netcat-traditional ncat
+sudo apt install -y iperf3

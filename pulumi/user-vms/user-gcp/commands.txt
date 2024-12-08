@@ -1,0 +1,5 @@
+Clear linking info:
+curl http://35.208.217.95:5001/clearlinks
+
+list current link info:
+curl http://35.208.217.95:5001/currentlinks

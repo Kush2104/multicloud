@@ -1,0 +1,42 @@
+config:
+  aws:region: 'us-west-2'
+  mcn_vpc_name: 'user-vpc'
+  mcn_subnet_name: 'user-subnet'
+  mcn_subnet_ip: '10.0.0.0/24'
+  mcn_subnet_region: 'us-west-2a'
+  mcn_security_group_name: 'user-security-group'
+  mcn_security_group_rules:
+    ingress:
+      - protocol: tcp
+        from_port: 22
+        to_port: 22
+        cidr_blocks: ['0.0.0.0/0']
+      - protocol: tcp
+        from_port: 1234
+        to_port: 1234
+        cidr_blocks: ['0.0.0.0/0']
+      - protocol: tcp
+        from_port: 5001
+        to_port: 5001
+        cidr_blocks: ['0.0.0.0/0']
+      - protocol: tcp
+        from_port: 80
+        to_port: 80
+        cidr_blocks: ['0.0.0.0/0']
+      - protocol: icmp
+        from_port: -1
+        to_port: -1
+        cidr_blocks: ['0.0.0.0/0']
+      - protocol: udp
+        from_port: 4789
+        to_port: 4789
+        cidr_blocks: ['0.0.0.0/0']
+    egress:
+      - protocol: -1
+        from_port: 0
+        to_port: 0
+        cidr_blocks: ['0.0.0.0/0']
+  mcn_vm_name: 'user-vm'
+  mcn_vm_instance_type: 't2.micro'
+  mcn_vm_key_name: 'user-aws-key'
+  mcn_vm_region: 'us-west-2'

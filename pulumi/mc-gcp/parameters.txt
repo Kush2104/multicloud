@@ -1,0 +1,19 @@
+config:
+  gcp:project: pulumi-workspace
+  MCNode:mcn_vpc_name: 'mcn-vpc'
+
+  MCNode:mcn_subnet_name: 'mcn-subnet'
+  MCNode:mcn_subnet_ip: '10.0.0.0/24'
+  MCNode:mcn_subnet_region: "us-central1"
+
+  MCNode:mcn_firewall_name: 'mcn-firewall'
+  MCNode:mcn_firewall_rules: [{"protocol" : "tcp","ports" : ["22", "1234"]},{"protocol" : "icmp"},{ "protocol" : "udp", "ports" : ["4789"]}]
+  
+  MCNode:mcn_vm_name: 'mcn-vm'
+  MCNode:mcn_vm_machine_type: 'e2-micro'
+  MCNode:mcn_vm_zone: 'us-central1-a'
+  MCNode:mcn_vm_image: 'debian-12-bookworm-v20240312'
+  MCNode:mcn_vm_ip_name: 'mcn-ip'
+  MCNode:mcn_vm_region: "us-central1"
+  MCNode:package_name_1: 'netcat-traditional ncat'
+  MCNode:package_name_2: 'iperf3'

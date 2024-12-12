@@ -5,7 +5,7 @@ import pulumi_gcp as gcp
 
 config = pulumi.Config()
 
-mcn_vm_public_ip_address = "35.208.217.95" # Create a static IP and enter it here
+mcn_vm_public_ip_address = "35.209.74.177" # Create a static IP and enter it here
 
 
 mcn_vpc_name = config.require("mcn_vpc_name")

@@ -162,7 +162,7 @@ sudo sysctl -p
                     central_node_script_content += f"""
 # VM{idx} VXLAN interface
 sudo ip link add vxlan{vxlan_id} type vxlan id {vxlan_id} dstport 4789 remote {public_ip} local {central_node_ip}
-sudo ip addr add 192.168.{vxlan_id}.2/24 dev vxlan{vxlan_id}
+sudo ip addr add 192.168.{vxlan_id}.1/24 dev vxlan{vxlan_id}
 sudo ip link set up dev vxlan{vxlan_id}
 """
 
@@ -198,7 +198,7 @@ sudo ip route add 192.168.{vxlan_id}.0/24 dev vxlan{vxlan_id}
                     for other_idx, other_vm in enumerate(sent_info_results, start=1):
                         if other_idx != idx:
                             other_vxlan_id = 42 + other_idx
-                            other_vm_ip = f"192.168.{other_vxlan_id}.2"
+                            other_vm_ip = f"192.168.{other_vxlan_id}.1"
                             script_content += f"""
 sudo ip route add 192.168.{other_vxlan_id}.0/24 via {other_vm_ip} dev vxlan{vxlan_id}
 """

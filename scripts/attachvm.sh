@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LINK_STATIC_IP="35.208.217.95" # Insert Static IP for link-api here as well
+LINK_STATIC_IP="35.209.74.177" # Insert Static IP for link-api here as well
 
 detect_cloud_provider() {
   if curl -s --connect-timeout 2 http://metadata.google.internal/computeMetadata/v1/instance/ -H "Metadata-Flavor: Google" >/dev/null 2>&1; then

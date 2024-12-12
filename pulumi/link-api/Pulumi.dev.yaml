@@ -1,5 +1,5 @@
 config:
-  gcp:project: pulumi-workspace
+  gcp:project: nsf-2241818-207175
   link-api:mcn_vpc_name: 'link-api-vpc'
 
   link-api:mcn_subnet_name: 'link-apo-subnet'

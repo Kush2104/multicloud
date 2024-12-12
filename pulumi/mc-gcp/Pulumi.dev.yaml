@@ -1,5 +1,5 @@
 config:
-  gcp:project: pulumi-workspace
+  gcp:project: nsf-2241818-207175
   mc-gcp:mcn_vpc_name: 'mcn-vpc'
 
   mc-gcp:mcn_subnet_name: 'mcn-subnet'
@@ -17,4 +17,4 @@ config:
   mc-gcp:mcn_vm_region: "us-central1"
   mc-gcp:package_name_1: 'netcat-traditional ncat'
   mc-gcp:package_name_2: 'iperf3'
-  mc-gcp:vxlan_ip: '35.209.189.165'
+  mc-gcp:vxlan_ip: '35.209.61.22'
